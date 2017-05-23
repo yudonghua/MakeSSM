@@ -12,10 +12,11 @@ public class Main {
     public static void getAll(String table,String entity){
         entity = "id "+entity;
         new Entity().getBean(table,entity);
-        new Dao().getDao(entity);
+        new Dao().getDao(table);
         new Service().getImpl(table);
         new Service().getService(table);
         new Sql().getSql(table,entity);
         new Xml().getXml(table,entity);
+        new Controller().getController(table,entity);
     }
 }

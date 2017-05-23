@@ -13,11 +13,8 @@ public class WriteStringToFile {
         try
         {
             File file=new File(path);
-            if(file.getParentFile()!=null)
-                if (!file.getParentFile().exists()) {
-                    file.getParentFile().mkdirs();
-                }
             if (!file.exists()) {
+                file.getParentFile().mkdirs();
                 file.createNewFile();
             }
 
