@@ -19,7 +19,7 @@ public class Sql {
         sql+=beans[beans.length-1]+" varchar(255)";
         content=content.replaceAll("xxx","xxx."+table);
         content=content.replaceAll("sss",sql);
-        WriteStringToFile.write("com/spring_config/initDataBase.sql",content);
+        WriteStringToFile.write("spring_config/initDataBase.sql",content);
         return content;
     }
 

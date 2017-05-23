@@ -6,7 +6,7 @@ package make;
 public class Main {
     public static void main (String args[]){
         String table ="goods";
-        String entity = "order customer business status";
+        String entity = "customer business status";
         getAll(table,entity);
     }
     public static void getAll(String table,String entity){

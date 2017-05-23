@@ -24,6 +24,7 @@ public class Dao {
                     "    public void updateXxx(Xxx xxx);\r\n" +
                     "    public void insertXxx(Xxx xxx);\r\n" +
                     "    public Xxx getXxx(String id);\r\n" +
+                    "    public void deleteXxx(String id);\r\n" +
                     "}\r\n";
             String name=(char)(bean.charAt(0)+'A'-'a')+bean.substring(1);
             content = content.replaceAll("xxx",bean);

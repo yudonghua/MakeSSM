@@ -20,8 +20,11 @@ public class Xml {
                 "        <selectKey keyProperty=\"id\" resultType=\"String\" order=\"BEFORE\">\r\n" +
                 "            select replace(uuid(),'-','') from dual\r\n" +
                 "        </selectKey>\r\n" +
-                "        insert into Xxx(bean) values(bntwo);\r\n" +
+                "        insert into xxx(bean) values(bntwo)\r\n" +
                 "    </insert>\r\n" +
+                "    <delete id=\"deleteXxx\" parameterType=\"String\">\r\n" +
+                "        delete from xxx where id = #{id}\r\n" +
+                "    </delete>\r\n"+
                 "    <select id=\"getAllXxx\" resultType=\"Xxx\" parameterType=\"Xxx\">\r\n" +
                 "        SELECT bean FROM xxx\r\n" +
                 "        <trim suffixOverrides=\"and\">\r\n" +
@@ -61,6 +64,6 @@ public class Xml {
         content = content.replaceAll("bntwo",bean2);
         content = content.replaceAll("condition",condition);
         content = content.replaceAll("cdtwo",condition2);
-        WriteStringToFile.write("com/mybatis_config/"+name+".xml",content);
+        WriteStringToFile.write("mybatis_config/"+name+".xml",content);
     }
 }

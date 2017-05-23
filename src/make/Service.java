@@ -29,11 +29,12 @@ public class Service {
                     "    public void updateXxx(Xxx xxx){ this.xxxDao.updateXxx(xxx);};\r\n" +
                     "    public void insertXxx(Xxx xxx){ this.xxxDao.insertXxx(xxx);}\r\n" +
                     "    public Xxx getXxx(String id){return this.xxxDao.getXxx(id);}\r\n" +
+                    "    public void deleteXxx(String id){this.xxxDao.deleteXxx(id);}\r\n" +
                     "}\r\n";
             String name=(char)(bean.charAt(0)+'A'-'a')+bean.substring(1);
             content = content.replaceAll("xxx",bean);
             content = content.replaceAll("Xxx",name);
-            WriteStringToFile.write("com/service/impl/"+name+"Service.java",content);
+            WriteStringToFile.write("com/service/impl/"+name+"ServiceImpl.java",content);
         }
     }
     public static void getService(String service) {
@@ -53,6 +54,7 @@ public class Service {
                     "    public void updateXxx(Xxx xxx);\r\n" +
                     "    public void insertXxx(Xxx xxx);\r\n" +
                     "    public Xxx getXxx(String id);\r\n" +
+                    "    public void deleteXxx(String id);\r\n" +
                     "}\r\n";
             String name=(char)(bean.charAt(0)+'A'-'a')+bean.substring(1);
             content = content.replaceAll("xxx",bean);
